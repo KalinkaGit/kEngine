@@ -25,9 +25,9 @@ namespace kEngine
 
     Time Clock::getElapsedTime() const
     {
-        const auto now = std::chrono::high_resolution_clock::now();
-        const auto elapsed = now - m_start;
-
-        return Time(std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count());
+        auto now = std::chrono::high_resolution_clock::now();
+        auto elapsed = std::chrono::duration_cast<std::chrono::duration<double>>(now - m_start);
+    
+        return Time(elapsed.count());
     }
 }
