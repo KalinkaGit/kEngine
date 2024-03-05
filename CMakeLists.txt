@@ -8,7 +8,7 @@ file(GLOB_RECURSE SOURCES
     "src/*.cpp"
 )
 
-add_executable(kEngine ${SOURCES})
+add_executable(kEngine ${SOURCES} "glad/src/glad.c")
 
 find_package(OpenGL REQUIRED)
 
@@ -24,6 +24,8 @@ add_subdirectory("glfw")
 set(GLM_DIR "glm")
 
 add_subdirectory("glm")
+
+include_directories(glad "glad/include")
 
 target_include_directories(kEngine PRIVATE ${OPENGL_INCLUDE_DIR})
 
