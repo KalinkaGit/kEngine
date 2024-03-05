@@ -21,9 +21,15 @@ set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
 
 add_subdirectory("glfw")
 
+set(GLM_DIR "glm")
+
+add_subdirectory("glm")
+
 target_include_directories(kEngine PRIVATE ${OPENGL_INCLUDE_DIR})
 
 target_link_libraries(kEngine PRIVATE glfw)
+
+target_link_libraries(kEngine PRIVATE glm)
 
 target_link_libraries(kEngine PRIVATE ${OPENGL_LIBRARIES} ${GLFW_LIBRARIES})
 
