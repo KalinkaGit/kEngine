@@ -41,7 +41,7 @@ namespace kEngine
         glUniform1f(getUniformLocation(name), value);
     }
 
-    void shader::setUniform4f(
+    void Shader::setUniform4f(
         const std::string &name,
         float v0,
         float v1,
