@@ -11,9 +11,14 @@
 
 #pragma once
 
+#include <iostream>
+#include <sstream>
+#include <fstream>
 #include <string>
 #include <unordered_map>
 #include <glm/glm.hpp>
+
+#include "glad/glad.h"
 
 namespace kEngine
 {
