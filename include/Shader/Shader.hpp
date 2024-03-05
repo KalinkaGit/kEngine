@@ -16,7 +16,7 @@
 #include <fstream>
 #include <string>
 #include <unordered_map>
-#include <glm/glm.hpp>
+#include <third-party/glm/glm.hpp>
 
 #include "glad/glad.h"
 

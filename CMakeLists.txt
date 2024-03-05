@@ -1,14 +1,15 @@
 cmake_minimum_required(VERSION 3.29.0-rc1)
-project(kEngine VERSION 1.0.0 LANGUAGES CXX)
+project(kEngine VERSION 1.0.0 LANGUAGES C CXX)
 
 include(CTest)
 enable_testing()
 
 file(GLOB_RECURSE SOURCES 
     "src/*.cpp"
+    "third-party/glad/src/glad.c"
 )
 
-add_executable(kEngine ${SOURCES} "glad/src/glad.c")
+add_executable(kEngine ${SOURCES})
 
 find_package(OpenGL REQUIRED)
 
@@ -19,13 +20,13 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
 
-add_subdirectory("glfw")
+add_subdirectory("third-party/glfw")
 
-set(GLM_DIR "glm")
+set(GLM_DIR "third-party/glm")
 
-add_subdirectory("glm")
+add_subdirectory("third-party/glm")
 
-include_directories(glad "glad/include")
+include_directories(glad "third-party/glad/include")
 
 target_include_directories(kEngine PRIVATE ${OPENGL_INCLUDE_DIR})
 
