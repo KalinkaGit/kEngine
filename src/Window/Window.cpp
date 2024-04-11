@@ -1,11 +1,11 @@
 /**
  * @file Window.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2024-02-18
+ * @author Kalinka (KalinkaGit) (remi.grimault@gmail.com)
+ * @brief Main methods to manage the window
+ * @version 1.0.0
+ * @date 2024-04-11
  * 
- * @copyright Copyright (c) 2024
+ * @copyright Copyright (c) 2024 (jk)
  * 
  */
 
@@ -22,6 +22,9 @@ namespace kEngine
         }
 
         glfwWindowHint(GLFW_SAMPLES, 16);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
         m_window = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
         if (!m_window)
@@ -51,7 +54,16 @@ namespace kEngine
             glViewport(0, 0, width, height);
         });
 
+        if (!gladLoadGLLoader((GLADloadproc) glfwGetProcAddress))
+        {
+            throw std::runtime_error("Failed to initialize GLAD");
+        }
+
         glViewport(0, 0, width, height);
+
+        glEnable(GL_MULTISAMPLE);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
         setFrameLimit(0);
     }
@@ -65,6 +77,11 @@ namespace kEngine
     void Window::swapBuffers()
     {
         glfwSwapBuffers(m_window);
+    }
+
+    GLFWwindow *Window::getWindow() const
+    {
+        return m_window;
     }
 
     void Window::display()
@@ -114,6 +131,11 @@ namespace kEngine
     void Window::pollEvents()
     {
         glfwPollEvents();
+    }
+
+    bool Window::isKeyPressed(int key) const
+    {
+        return glfwGetKey(m_window, key) == GLFW_PRESS;
     }
 
     void Window::clear()

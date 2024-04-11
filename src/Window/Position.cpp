@@ -1,9 +1,9 @@
 /**
  * @file Position.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2024-02-21
+ * @author Kalinka (KalinkaGit) (remi.grimault@gmail.com)
+ * @brief Methods to manage the position of the window
+ * @version 1.0.0
+ * @date 2024-04-11
  * 
  * @copyright Copyright (c) 2024
  * 

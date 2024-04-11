@@ -1,9 +1,9 @@
 /**
  * @file Shader.cpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2024-03-04
+ * @author Kalinka (KalinkaGit) (remi.grimault@gmail.com)
+ * @brief Methods to manage shaders
+ * @version 1.0.0
+ * @date 2024-04-11
  * 
  * @copyright Copyright (c) 2024
  * 

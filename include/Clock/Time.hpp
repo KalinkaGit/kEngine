@@ -1,9 +1,9 @@
 /**
  * @file Time.hpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
- * @date 2024-02-18
+ * @author Kalinka (KalinkaGit) (remi.grimault@gmail.com)
+ * @brief Header for conversion of time from a clock
+ * @version 1.0.0
+ * @date 2024-04-11
  * 
  * @copyright Copyright (c) 2024
  * 

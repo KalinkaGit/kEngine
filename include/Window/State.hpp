@@ -1,9 +1,9 @@
 /**
  * @file State.hpp
- * @author 
- * @brief 
- * @version 0.1
- * @date 2024-02-18
+ * @author Kalinka (KalinkaGit) (remi.grimault@gmail.com)
+ * @brief Enum class to manage the state of the window
+ * @version 1.0.0
+ * @date 2024-04-11
  * 
  * @copyright Copyright (c) 2024
  * 

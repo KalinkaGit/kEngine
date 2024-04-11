@@ -1,9 +1,9 @@
 /**
  * @file Window.hpp
- * @author your name (you@domain.com)
- * @brief Class for creating a window
+ * @author Kalinka (KalinkaGit) (remi.grimault@gmail.com)
+ * @brief Header of the window class
  * @version 1.0.0
- * @date 2024-02-16
+ * @date 2024-04-11
  * 
  * @copyright Copyright (c) 2024
  * 
@@ -11,6 +11,7 @@
 
 #pragma once
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <string>
 #include <stdexcept>
@@ -177,6 +178,15 @@ namespace kEngine
              * @brief Terminate the window
              */
             void terminate();
+
+            /**
+             * @brief Get the window
+             * 
+             * @return Win* Pointer to the window
+             */
+            GLFWwindow *getWindow() const;
+
+            bool isKeyPressed(int key) const;
 
         private:
             State m_state;

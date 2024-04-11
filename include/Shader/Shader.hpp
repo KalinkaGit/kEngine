@@ -1,9 +1,9 @@
 /**
  * @file Shader.hpp
- * @author 
+ * @author Kalinka (KalinkaGit) (remi.grimault@gmail.com)
  * @brief Shaders are programs that run on the GPU. They are used to compute rendering effects and are written in GLSL.
- * @version 0.1
- * @date 2024-03-04
+ * @version 1.0.0
+ * @date 2024-04-11
  * 
  * @copyright Copyright (c) 2024
  * 
