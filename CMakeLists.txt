@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.29.0-rc1)
+cmake_minimum_required(VERSION 3.12.0)
 project(kEngine VERSION 1.0.0 LANGUAGES C CXX)
 
 include(CTest)
