@@ -28,6 +28,8 @@ add_subdirectory("third-party/glm")
 
 include_directories(glad "third-party/glad/include")
 
+include_directories(stbi "third-party/other/stb")
+
 target_include_directories(kEngine PRIVATE ${OPENGL_INCLUDE_DIR})
 
 target_link_libraries(kEngine PRIVATE glfw)
