@@ -11,50 +11,38 @@
 
 #pragma once
 
-#define SPEED 2.5f
-#define SENSITIVITY 0.1f
-#define ZOOM 45.0f
-
 #include <third-party/glm/glm.hpp>
 #include <third-party/glm/gtc/matrix_transform.hpp>
 
+#include "utils/Vectors.hpp"
+
 namespace kEngine
-{
+{ 
     enum CameraMovement
     {
-        FORWARD,
-        BACKWARD,
-        LEFT,
-        RIGHT
+            FORWARD,
+            BACKWARD,
+            LEFT,
+            RIGHT
     };
 
     class Camera
     {
         public:
+            Camera(Vec3f position = Vec3f(0.0f, 0.0f, 0.0f), Vec3f up = Vec3f(0.0f, 1.0f, 0.0f), float yaw = -90.0f, float pitch = 0.0f);
+            Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch);
 
-
-            glm::vec3 Position;
-            glm::vec3 Front;
-            glm::vec3 Up;
-            glm::vec3 Right;
-            glm::vec3 WorldUp;
-
-            float Yaw;
-            float Pitch;
-
-            float MovementSpeed;
-            float MouseSensitivity;
-            float Zoom;
-
-            Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = -90.0f, float pitch = 0.0f);
-
-            glm::mat4 GetViewMatrix();
-
-            void ProcessKeyboard(CameraMovement direction, float deltaTime);
-            void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
-            void ProcessMouseScroll(float yoffset);
+            glm::mat4 getViewMatrix() const;
+            void processKeyboard(CameraMovement direction, float deltaTime);
+            void processMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
+            void processMouseScroll(float yoffset);
+            
+            float getZoom() const;
 
         private:
-            void updateCameraVectors();
+            Vec3f m_position, m_front, m_up;
+            float m_yaw, m_pitch, m_speed, m_sensitivity, m_zoom;
+            bool m_firstMouse;
+            float m_lastX, m_lastY;
     };
 }
