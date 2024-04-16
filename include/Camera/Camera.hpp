@@ -38,6 +38,13 @@ namespace kEngine
             void processMouseScroll(float yoffset);
             
             float getZoom() const;
+            Vec3f getPosition() const;
+            Vec3f getFront() const;
+            Vec3f getUp() const;
+            float getYaw() const;
+            float getPitch() const;
+            float getSpeed() const;
+            float getSensitivity() const;
 
         private:
             Vec3f m_position, m_front, m_up;

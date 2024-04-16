@@ -49,6 +49,10 @@ namespace kEngine
         });
 
         glfwSetWindowUserPointer(m_window, this);
+        glfwSetCursorPosCallback(m_window, [](GLFWwindow *window, double xpos, double ypos) {
+            Window *win = static_cast<Window *>(glfwGetWindowUserPointer(window));
+            win->m_cursorPos = Vec2f(xpos, ypos);
+        });
 
         glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow *window, int width, int height) {
             glViewport(0, 0, width, height);
@@ -63,6 +67,7 @@ namespace kEngine
 
         glEnable(GL_MULTISAMPLE);
         glEnable(GL_BLEND);
+        glEnable(GL_DEPTH_TEST);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
         setFrameLimit(0);
@@ -79,9 +84,14 @@ namespace kEngine
         glfwSwapBuffers(m_window);
     }
 
-    GLFWwindow *Window::getWindow() const
+    Window::Win *Window::getWindow() const
     {
         return m_window;
+    }
+
+    Vec2f Window::getCursorPos() const
+    {
+        return m_cursorPos;
     }
 
     void Window::display()
@@ -138,8 +148,18 @@ namespace kEngine
         return glfwGetKey(m_window, key) == GLFW_PRESS;
     }
 
+    void Window::setClearColor(float r, float g, float b, float a)
+    {
+        glClearColor(r, g, b, a);
+    }
+
     void Window::clear()
     {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    }
+
+    void Window::setCursorMode(int mode)
+    {
+        glfwSetInputMode(m_window, GLFW_CURSOR, mode);
     }
 }

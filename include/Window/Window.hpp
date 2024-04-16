@@ -22,11 +22,17 @@
 #include "Clock/Clock.hpp"
 #include "Utils/Vectors.hpp"
 
+#define CURSOR_DISABLED GLFW_CURSOR_DISABLED
+#define CURSOR_HIDDEN GLFW_CURSOR_HIDDEN
+#define CURSOR_NORMAL GLFW_CURSOR_NORMAL
+
 namespace kEngine
 {
     class Window
     {
         public:
+            using Win = GLFWwindow;
+
             /**
              * @brief Construct a new window object
              * 
@@ -175,6 +181,8 @@ namespace kEngine
              */
             bool isVisible() const;
 
+            void setClearColor(float r, float g, float b, float a);
+
             /**
              * @brief Terminate the window
              */
@@ -185,9 +193,13 @@ namespace kEngine
              * 
              * @return Win* Pointer to the window
              */
-            GLFWwindow *getWindow() const;
+            Win *getWindow() const;
 
             bool isKeyPressed(int key) const;
+
+            void setCursorMode(int mode);
+
+            Vec2f getCursorPos() const;
 
         private:
             State m_state;
@@ -195,6 +207,7 @@ namespace kEngine
             std::string m_title;
             Clock m_clock;
             GLFWwindow *m_window;
+            Vec2f m_cursorPos;
 
             /**
              * @brief Hide the window

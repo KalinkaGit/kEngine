@@ -101,4 +101,39 @@ namespace kEngine
     {
         return m_zoom;
     }
+
+    Vec3f Camera::getPosition() const
+    {
+        return m_position;
+    }
+
+    Vec3f Camera::getFront() const
+    {
+        return m_front;
+    }
+
+    Vec3f Camera::getUp() const
+    {
+        return m_up;
+    }
+
+    float Camera::getYaw() const
+    {
+        return m_yaw;
+    }
+
+    float Camera::getPitch() const
+    {
+        return m_pitch;
+    }
+
+    float Camera::getSpeed() const
+    {
+        return m_speed;
+    }
+
+    float Camera::getSensitivity() const
+    {
+        return m_sensitivity;
+    }
 }
