@@ -20,6 +20,7 @@
 
 #include "Window/State.hpp"
 #include "Clock/Clock.hpp"
+#include "Utils/Vectors.hpp"
 
 namespace kEngine
 {
@@ -96,9 +97,9 @@ namespace kEngine
             /**
              * @brief Get the position of the window
              * 
-             * @return std::pair<float, float> Position of the window
+             * @return Vec2i Position of the window
              */
-            std::pair<float, float> getPosition() const;
+            Vec2i getPosition() const;
 
             /**
              * @brief Get the title of the window
@@ -125,9 +126,9 @@ namespace kEngine
             /**
              * @brief Get the size of the window
              * 
-             * @return std::pair<float, float> Size of the window
+             * @return Vec2i Size of the window
              */
-            std::pair<float, float> getSize() const;
+            Vec2i getSize() const;
 
             /**
              * @brief Set the title of the window

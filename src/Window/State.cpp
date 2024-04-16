@@ -22,8 +22,8 @@ namespace kEngine
         }
         else if (state == State::Windowed)
         {
-            std::pair<float, float> size = getSize();
-            glfwSetWindowMonitor(m_window, nullptr, 0, 0, size.first, size.second, 0);
+            Vec2i size = getSize();
+            glfwSetWindowMonitor(m_window, nullptr, 0, 0, size.x, size.y, 0);
         }
         else if (state == State::Borderless)
         {

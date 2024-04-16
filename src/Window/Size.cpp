@@ -23,12 +23,22 @@ namespace kEngine
         glfwSetWindowSize(m_window, width, height);
     }
 
-    std::pair<float, float> Window::getSize() const
+    Vec2i Window::getSize() const
     {
         int width, height;
 
         glfwGetWindowSize(m_window, &width, &height);
 
         return {width, height};
+    }
+
+    float Window::getHeight() const
+    {
+        return getSize().y;
+    }
+
+    float Window::getWidth() const
+    {
+        return getSize().x;
     }
 }

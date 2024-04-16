@@ -18,7 +18,7 @@ namespace kEngine
         glfwSetWindowPos(m_window, x, y);
     }
 
-    std::pair<float, float> Window::getPosition() const
+    Vec2i Window::getPosition() const
     {
         int x, y;
 
