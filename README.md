@@ -23,7 +23,7 @@ Why does this project exist?
 | Clock system | ✅ |  |
 | Shader management | ✅ |  |
 | FrameCounter | ✅ |  |
-| Camera | 70% | ⚠️ |
+| Camera | ✅ |  |
 | 3D sound management | 0% |  |
 | Light system | 0% | |
 | Particle system | 0% | |
