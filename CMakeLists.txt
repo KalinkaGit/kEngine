@@ -30,6 +30,8 @@ include_directories(glad "third-party/glad/include")
 
 include_directories(stbi "third-party/other/stb")
 
+include_directories(gltfloader "third-party/gltfloader/include")
+
 target_include_directories(kEngine PRIVATE ${OPENGL_INCLUDE_DIR})
 
 target_link_libraries(kEngine PRIVATE glfw)
@@ -37,6 +39,10 @@ target_link_libraries(kEngine PRIVATE glfw)
 target_link_libraries(kEngine PRIVATE glm)
 
 target_link_libraries(kEngine PRIVATE ${OPENGL_LIBRARIES} ${GLFW_LIBRARIES})
+
+find_library(GLTFLOADER_LIBRARY gltfloader PATHS "third-party/gltfloader/lib")
+
+target_link_libraries(kEngine PRIVATE ${GLTFLOADER_LIBRARY})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
